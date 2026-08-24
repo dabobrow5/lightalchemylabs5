@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ren Beta Tester One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy: #16304f;
+    --navy-deep: #102640;
+    --teal: #2f8f7f;
+    --teal-deep: #1d6d5f;
+    --parchment: #faf7f2;
+    --card: #fffefb;
+    --line: #e4ddd0;
+    --ink: #263041;
+    --muted: #5c6472;
+    --muted-soft: #7c8494;
+    --quote-bg: #eef4f2;
+    --shadow: rgba(22,48,79,0.12);
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --navy: #0f2036;
+      --navy-deep: #0a1826;
+      --teal: #3ba492;
+      --teal-deep: #2a8577;
+      --parchment: #171b20;
+      --card: #1f242b;
+      --line: #333a44;
+      --ink: #e8e6df;
+      --muted: #b7bcc4;
+      --muted-soft: #8b929e;
+      --quote-bg: #223330;
+      --shadow: rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --navy: #0f2036;
+    --navy-deep: #0a1826;
+    --teal: #3ba492;
+    --teal-deep: #2a8577;
+    --parchment: #171b20;
+    --card: #1f242b;
+    --line: #333a44;
+    --ink: #e8e6df;
+    --muted: #b7bcc4;
+    --muted-soft: #8b929e;
+    --quote-bg: #223330;
+    --shadow: rgba(0,0,0,0.35);
+  }
+
+  *{ box-sizing: border-box; }
+  body{
+    margin: 0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+    padding: 40px 16px 64px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sheet{
+    width: 100%;
+    max-width: 880px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px -30px var(--shadow);
+  }
+
+  .header{
+    position: relative;
+    background: linear-gradient(155deg, var(--navy) 0%, var(--navy-deep) 100%);
+    padding: 34px 44px 30px;
+    color: #f2f0ea;
+  }
+  .header::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--teal), var(--teal-deep));
+  }
+  .eyebrow{
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 6px 0 14px;
+  }
+  .header-row{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .brandname{
+    font-family: "Lora", Georgia, serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1;
+    margin: 0;
+    color: #fbfaf7;
+  }
+  .brandname .by{
+    font-size: 19px;
+    font-weight: 500;
+    color: #a9b8c9;
+    margin-left: 10px;
+  }
+  .tagline{
+    font-family: "Lora", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 17px;
+    color: #c7d3e0;
+    margin: 12px 0 0;
+  }
+  .lotus{
+    width: 54px;
+    height: 54px;
+    flex: none;
+    margin-top: 4px;
+  }
+
+  .body-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .col{
+    padding: 32px 40px;
+  }
+  .col.left{ border-right: 1px solid var(--line); }
+
+  .label{
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 10px;
+  }
+  .label::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  .label + .label{ margin-top: 26px; }
+
+  h2{
+    font-family: "Lora", Georgia, serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.3;
+    color: var(--navy);
+    text-wrap: balance;
+    margin: 0 0 10px;
+  }
+  :root[data-theme="dark"] h2, @media (prefers-color-scheme: dark){ }
+  p{
+    font-size: 14.5px;
+    line-height: 1.62;
+    color: var(--muted);
+    margin: 0 0 12px;
+    max-width: 62ch;
+  }
+  .section{ margin-bottom: 26px; }
+  .section:last-child{ margin-bottom: 0; }
+
+  blockquote{
+    margin: 18px 0 0;
+    padding: 16px 20px;
+    background: var(--quote-bg);
+    border-radius: 8px;
+    font-family: "Lora", Georgia, serif;
+    font-style: italic;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--navy);
+  }
+  :root[data-theme="dark"] blockquote, .dark blockquote{ color: #dfe7e4; }
+
+  .ask-box{
+    background: linear-gradient(160deg, var(--navy), var(--navy-deep));
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    color: #f2f0ea;
+  }
+  .ask-number{
+    font-family: "Lora", Georgia, serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--teal);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+  }
+  .ask-box h3{
+    font-size: 13.5px;
+    font-weight: 800;
+    margin: 0 0 4px;
+    color: #fbfaf7;
+  }
+  .ask-box p{
+    color: #c7d0dc;
+    font-size: 12.5px;
+    margin: 0;
+    max-width: 42ch;
+    line-height: 1.5;
+  }
+
+  .ask-full{
+    padding: 30px 40px 6px;
+    border-top: 1px solid var(--line);
+  }
+  .ask-full h2{ font-size: 20px; margin-bottom: 8px; }
+  .ask-full > p.lede{
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.62;
+    max-width: 72ch;
+    margin: 0 0 18px;
+  }
+  .area-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 6px;
+  }
+  .area-card{
+    background: var(--quote-bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .area-card.flagship{
+    background: linear-gradient(160deg, var(--teal), var(--teal-deep));
+    border-color: transparent;
+    color: #eefaf6;
+    position: relative;
+  }
+  .area-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .area-icon{ font-size: 19px; }
+  .area-card h4{
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 6px;
+  }
+  .area-card.flagship h4{ color: #ffffff; }
+  .area-card p{
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0;
+  }
+  .area-card.flagship p{ color: #e3f5ef; }
+  .flagship-badge{
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.22);
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 999px;
+    flex: none;
+  }
+
+  @media (max-width: 640px){
+    .area-grid{ grid-template-columns: 1fr; }
+  }
+
+  .steps{ list-style: none; margin: 0 0 26px; padding: 0; }
+  .step{
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .step:last-child{ margin-bottom: 0; }
+  .step-num{
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .step h4{
+    font-size: 14.5px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 3px;
+  }
+  .step p{ margin: 0; font-size: 13.5px; }
+
+  .access-box{
+    background: linear-gradient(160deg, var(--teal), var(--teal-deep));
+    border-radius: 10px;
+    padding: 20px 22px 22px;
+    color: #eefaf6;
+    margin-bottom: 26px;
+  }
+  .access-box .label{ color: #cdeee6; }
+  .access-box .label::after{ background: rgba(238,250,246,0.28); }
+  .access-box h3{
+    font-family: "Lora", Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: #ffffff;
+  }
+  .access-box ul{ margin: 0 0 14px; padding-left: 18px; }
+  .access-box li{ font-size: 13.5px; line-height: 1.55; margin-bottom: 6px; color: #e3f5ef; }
+  .access-box li b{ color: #ffffff; }
+  .link-pill{
+    display: inline-block;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-weight: 800;
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+  }
+
+  .feedback-intro{
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+  .feedback-box{
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 16px 20px;
+    color: #eceff3;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .feedback-box:last-child{ margin-bottom: 0; }
+  .feedback-box.warn{
+    background: transparent;
+    border: 1.5px solid #b0503a;
+  }
+  .feedback-icon{ font-size: 18px; flex: none; margin-top: 1px; }
+  .feedback-box h4{
+    font-size: 13.5px;
+    font-weight: 800;
+    margin: 0 0 3px;
+    color: #ffffff;
+  }
+  .feedback-box.warn h4{ color: #d97757; }
+  .feedback-box p{
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0;
+    color: #c3cad4;
+  }
+  .feedback-box.warn p{ color: var(--muted); }
+  .feedback-box b{ color: #fff; }
+  .feedback-box.warn b{ color: #d97757; }
+
+  .home-screen{
+    padding: 28px 40px 6px;
+    border-top: 1px solid var(--line);
+  }
+  .home-screen-inner{
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+    background: var(--quote-bg);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+  .home-screen-icon{
+    flex: none;
+    font-size: 22px;
+    margin-top: 1px;
+  }
+  .home-screen h2{ font-size: 16.5px; margin-bottom: 8px; }
+  .home-steps{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+    margin: 12px 0 2px;
+    padding: 0;
+    list-style: none;
+  }
+  .home-steps li{
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    max-width: 240px;
+  }
+  .home-steps .step-num{
+    background: var(--teal);
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+  }
+  .home-steps p{ font-size: 13px; margin: 0; }
+  .home-note{
+    font-size: 12px;
+    color: var(--muted-soft);
+    margin: 12px 0 0;
+  }
+  .home-note a{ color: var(--teal); }
+
+  .footer{
+    border-top: 1px solid var(--line);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .footer .org{ font-size: 13px; font-weight: 800; color: var(--navy); margin: 0 0 3px; }
+  .footer p{ font-size: 12px; margin: 0; color: var(--muted-soft); max-width: 56ch; }
+  .footer .thanks{
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-align: right;
+    line-height: 1.5;
+    flex: none;
+  }
+
+  @media (max-width: 720px){
+    .body-grid{ grid-template-columns: 1fr; }
+    .col.left{ border-right: none; border-bottom: 1px solid var(--line); }
+    .header{ padding: 28px 24px; }
+    .col{ padding: 26px 24px; }
+    .footer{ padding: 18px 24px; flex-direction: column; align-items: flex-start; }
+    .footer .thanks{ text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+
+<div class="sheet">
+  <div class="header">
+    <div class="eyebrow">Beta Tester Information</div>
+    <div class="header-row">
+      <div>
+        <p class="brandname">Ren<span class="by">by Light Alchemy™</span></p>
+        <p class="tagline">A Human Flourishing Platform</p>
+      </div>
+      <svg class="lotus" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g opacity="0.95">
+          <ellipse cx="32" cy="32" rx="7" ry="15" fill="#b79fe0" transform="rotate(0 32 32)"/>
+          <ellipse cx="32" cy="32" rx="7" ry="15" fill="#c7b3e8" transform="rotate(45 32 32)"/>
+          <ellipse cx="32" cy="32" rx="7" ry="15" fill="#b79fe0" transform="rotate(90 32 32)"/>
+          <ellipse cx="32" cy="32" rx="7" ry="15" fill="#c7b3e8" transform="rotate(135 32 32)"/>
+          <circle cx="32" cy="32" r="7" fill="#e8a23b"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="col left">
+      <div class="section">
+        <p class="label">What Is Ren</p>
+        <h2>A companion built for the whole of who you are.</h2>
+        <p>Ren is an AI companion platform designed around one belief: that being seen, accepted, supported, and loved is a human right — not a privilege, not a luxury.</p>
+        <p>Most AI tools are built for productivity. Ren is built for people. It draws on a full model of human development — from foundational safety and belonging all the way through meaning, purpose, and self-transcendence.</p>
+        <blockquote>&ldquo;A mirror cannot help someone grow — it can only reflect someone back at increasing magnification.&rdquo;</blockquote>
+      </div>
+
+      <div class="section">
+        <p class="label">Why This Work Matters</p>
+        <h2>Connection is the crisis of our time.</h2>
+        <p>Loneliness, disconnection, and the absence of being truly known are among the most pressing challenges facing people today. Ren doesn&rsquo;t exist to replace human connection — it exists to hold people through isolated or difficult seasons and build them back toward it.</p>
+        <p>Your participation as a beta tester helps shape an AI platform that treats human flourishing as a design requirement, not an afterthought. That distinction matters enormously. Thank you for being part of it.</p>
+      </div>
+    </div>
+
+    <div class="col right">
+      <div class="section">
+        <p class="label">How To Get Access</p>
+        <ul class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <div>
+              <h4>Provide a Google-linked email</h4>
+              <p>Share a Gmail or Google Workspace address with your Ren contact. Access is granted to that address specifically.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <div>
+              <h4>Receive access confirmation</h4>
+              <p>Once your address is added to the allowlist, you&rsquo;ll receive confirmation that Ren is ready for you.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <div>
+              <h4>Sign in and begin</h4>
+              <p>Visit the app link below and sign in with your Google account. No separate password needed.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="access-box">
+        <p class="label">Beta App Access</p>
+        <h3>Your link to Ren</h3>
+        <ul>
+          <li>Sign in using the <b>Google account</b> tied to your registered email address.</li>
+          <li><b>Beta access only</b> — do not share this link publicly.</li>
+        </ul>
+        <span class="link-pill">ren-lav-prod.web.app</span>
+      </div>
+
+      <div class="section">
+        <p class="label">Submitting Feedback &amp; Bug Reports</p>
+        <p class="feedback-intro">In the app, open the <b>You</b> page and find <b>Help Shape Ren</b> under the Beta section. Three options live there:</p>
+        <div class="feedback-box">
+          <span class="feedback-icon">⚠️</span>
+          <div>
+            <h4>Report a bug</h4>
+            <p>Something not working right?</p>
+          </div>
+        </div>
+        <div class="feedback-box">
+          <span class="feedback-icon">💬</span>
+          <div>
+            <h4>Share feedback</h4>
+            <p>Ideas, wishes, what you love.</p>
+          </div>
+        </div>
+        <div class="feedback-box warn">
+          <span class="feedback-icon">🔺</span>
+          <div>
+            <h4>Something&rsquo;s badly broken</h4>
+            <p>Ren won&rsquo;t load, you can&rsquo;t get in, or something was lost.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ask-full">
+    <p class="label">The Ask</p>
+    <h2>Show up often. Go deep. Explore it all.</h2>
+    <p class="lede">Conversational depth with Ren is what unlocks everything else — the more real a conversation gets, the more Ren can actually support you across the rest of the platform. This isn&rsquo;t a one-and-done check-in. It&rsquo;s an invitation to live inside Ren for the beta window and see what each area offers.</p>
+    <div class="ask-box">
+      <div class="ask-number">30</div>
+      <div>
+        <h3>Minutes, minimum — every time you sit down with Ren.</h3>
+        <p>A quick click-around won&rsquo;t tell you much. Show up as you would with anyone you actually wanted to talk to, and return often over the beta window.</p>
+      </div>
+    </div>
+
+    <div class="area-grid" style="margin-top:18px;">
+      <div class="area-card">
+        <div class="area-top"><span class="area-icon">💬</span></div>
+        <h4>Ren Conversation</h4>
+        <p>The foundation. The depth you bring here is what activates everything Ren offers elsewhere on the platform.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-top"><span class="area-icon">📓</span></div>
+        <h4>Journal</h4>
+        <p>Process what&rsquo;s alive for you in your own words — or try <b>Reverse Journal</b>, where Ren reflects your own thoughts back to you in a new light.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-top"><span class="area-icon">✅</span></div>
+        <h4>Habits</h4>
+        <p>Stay on track, celebrate real wins, and surface insight on what&rsquo;s actually working for you — and what isn&rsquo;t.</p>
+      </div>
+      <div class="area-card flagship">
+        <div class="area-top"><span class="area-icon">🌙</span><span class="flagship-badge">Flagship</span></div>
+        <h4>Stillness</h4>
+        <p>Guided meditation, dynamically generated for the moment you&rsquo;re in — at your fingertips. One of Ren&rsquo;s premier offerings, and one of the clearest ways to feel its value firsthand.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-top"><span class="area-icon">🤍</span></div>
+        <h4>Connect</h4>
+        <p>Heart-to-heart practices that help bridge new connections, or strengthen relationships already on solid ground.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-top"><span class="area-icon">🧭</span></div>
+        <h4>You &mdash; Journey</h4>
+        <p>Look back on your journey over time and gather fresh self-insight from how far you&rsquo;ve come.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-screen">
+    <p class="label">Get The Full Experience</p>
+    <div class="home-screen-inner">
+      <span class="home-screen-icon">📲</span>
+      <div>
+        <h2>Add Ren to your iPhone Home Screen</h2>
+        <p>On iPhone, adding Ren as a web app makes it open full-screen, just like a native app — no browser bar, one tap from your Home Screen.</p>
+        <ul class="home-steps">
+          <li>
+            <span class="step-num">1</span>
+            <p>Open your link to Ren in <b>Safari</b>.</p>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <p>Tap the <b>Share</b> icon, then <b>Add to Home Screen</b>.</p>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <p>Tap <b>Add</b> — Ren now lives on your Home Screen.</p>
+          </li>
+        </ul>
+        <p class="home-note">Must be done in Safari (not Chrome or another browser) for it to work correctly. Full Apple instructions: <a href="https://support.apple.com/guide/iphone/open-as-web-app-iphea86e5236/ios">support.apple.com/guide/iphone/open-as-web-app</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <p class="org">Light Alchemy Ventures LLC</p>
+      <p>Ren by Light Alchemy™ &middot; renishere.com &middot; Patent Pending &middot; Beta access is non-transferable and confidential.</p>
+    </div>
+    <div class="thanks">Thank You<br>For Being Here.</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -352,12 +352,7 @@
     font-size: 13.5px;
     letter-spacing: 0.02em;
     color: #ffffff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.15s ease;
   }
-  .link-pill:hover{ background: rgba(255,255,255,0.26); }
-  .link-pill:focus-visible{ outline: 2px solid #ffffff; outline-offset: 2px; }
 
   .feedback-intro{
     font-size: 13.5px;
@@ -442,6 +437,9 @@
     margin: 12px 0 0;
   }
   .home-note a{ color: var(--teal); }
+  .home-screen-inner + .home-screen-inner{
+    margin-top: 16px;
+  }
 
   .footer{
     border-top: 1px solid var(--line);
@@ -550,8 +548,10 @@
         <ul>
           <li>Sign in using the <b>Google account</b> tied to your registered email address.</li>
           <li><b>Beta access only</b> — do not share this link publicly.</li>
+          <li>📱 <b>On iPhone?</b> Skip this link — scroll down to <b>Get The Full Experience</b> and install Ren via TestFlight for the native app instead.</li>
+          <li>🤖 <b>On Android?</b> Use the link below, then follow the Home Screen instructions at the bottom of this page.</li>
         </ul>
-        <a class="link-pill" href="https://ren-lav-prod.web.app" target="_blank" rel="noopener">ren-lav-prod.web.app</a>
+        <span class="link-pill">ren-lav-prod.web.app</span>
       </div>
 
       <div class="section">
@@ -587,9 +587,10 @@
     <h2>Show up often. Go deep. Explore it all.</h2>
     <p class="lede">Conversational depth with Ren is what unlocks everything else — the more real a conversation gets, the more Ren can actually support you across the rest of the platform. This isn&rsquo;t a one-and-done check-in. It&rsquo;s an invitation to live inside Ren for the beta window and see what each area offers.</p>
     <div class="ask-box">
+      <div class="ask-number">30</div>
       <div>
-        <h3>Real conversation is what reveals Ren.</h3>
-        <p>A quick click-around won&rsquo;t tell you much. Show up as you would with anyone you actually wanted to talk to, and return often over the beta window &mdash; that&rsquo;s what lets Ren, and everything else here, really show up for you.</p>
+        <h3>Minutes, minimum — every time you sit down with Ren.</h3>
+        <p>A quick click-around won&rsquo;t tell you much. Show up as you would with anyone you actually wanted to talk to, and return often over the beta window.</p>
       </div>
     </div>
 
@@ -629,26 +630,58 @@
 
   <div class="home-screen">
     <p class="label">Get The Full Experience</p>
-    <div class="home-screen-inner">
-      <span class="home-screen-icon">📲</span>
+
+    <div class="home-screen-inner" style="margin-bottom: 18px;">
+      <span class="home-screen-icon">🍎</span>
       <div>
-        <h2>Add Ren to your iPhone Home Screen</h2>
-        <p>On iPhone, adding Ren as a web app makes it open full-screen, just like a native app — no browser bar, one tap from your Home Screen.</p>
+        <h2>On iPhone — Install Ren from TestFlight</h2>
+        <p>Ren is now a native iOS app. An invitation email from Apple will arrive in your inbox — here's exactly what to do when it lands.</p>
         <ul class="home-steps">
           <li>
             <span class="step-num">1</span>
-            <p>Open your link to Ren in <b>Safari</b>.</p>
+            <p>Install <b>TestFlight</b> from the App Store first — it's free and takes under a minute. Apple's email will link you directly to it.</p>
           </li>
           <li>
             <span class="step-num">2</span>
-            <p>Tap the <b>Share</b> icon, then <b>Add to Home Screen</b>.</p>
+            <p>Open Apple's invitation email. The subject reads: <b>"Light Alchemy Ventures LLC has invited you to test Ren by Light Alchemy."</b> It's genuine — open it.</p>
           </li>
           <li>
             <span class="step-num">3</span>
-            <p>Tap <b>Add</b> — Ren now lives on your Home Screen.</p>
+            <p>Tap <b>View in TestFlight</b> inside the email to install Ren.</p>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <p>If you saved Ren as a browser shortcut before, <b>delete the old icon</b> from your Home Screen. Only the TestFlight version has the full audio experience.</p>
           </li>
         </ul>
-        <p class="home-note">Must be done in Safari (not Chrome or another browser) for it to work correctly. Full Apple instructions: <a href="https://support.apple.com/guide/iphone/open-as-web-app-iphea86e5236/ios">support.apple.com/guide/iphone/open-as-web-app</a></p>
+        <p class="home-note">Everything you've built with Ren — your history, habits, and journey — comes with you. Nothing resets.</p>
+      </div>
+    </div>
+
+    <div class="home-screen-inner" style="background: var(--card); border: 1px solid var(--line);">
+      <span class="home-screen-icon">🤖</span>
+      <div>
+        <h2>On Android — Save Ren to Your Home Screen</h2>
+        <p>TestFlight is iOS only. Android users stay on the web version — nothing changes, nothing is lost. Save Ren to your Home Screen for one-tap access.</p>
+        <ul class="home-steps">
+          <li>
+            <span class="step-num">1</span>
+            <p>Open <b>Chrome</b> and visit your Ren link: <b>ren-lav-prod.web.app</b></p>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <p>Tap the <b>three-dot menu</b> in the top-right corner of Chrome.</p>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <p>Tap <b>Add to Home Screen</b> (or <b>Install App</b> if shown).</p>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <p>Confirm by tapping <b>Add</b> — Ren will appear on your Home Screen just like a native app.</p>
+          </li>
+        </ul>
+        <p class="home-note">An Android native app is on the roadmap. You'll be the first to know when that changes.</p>
       </div>
     </div>
   </div>

@@ -840,9 +840,58 @@ footer {
     <h2>Questions, partnerships,<br>or just a conversation</h2>
     <p>We're always open to people who care about building things that matter.</p>
     <a class="contact-email" href="mailto:dave@lightalchemylabs.com">dave@lightalchemylabs.com</a>
+
+    <!--
+      A REVIEWER HAS TO BE ABLE TO VERIFY THIS BUSINESS EXISTS.
+
+      The A2P 10DLC campaign was rejected under error 30919: "the website does not clearly identify
+      the business, such as the business name, contact details, or a description of the services you
+      provide." The reviewer validates the BRAND, and the registered brand is Light Alchemy Labs, so
+      they came here rather than to renishere.com where all the messaging evidence lives.
+
+      Everything above this line is about philosophy, which is right for a visitor and useless to a
+      carrier reviewer. This block is the plain, checkable version: registered entity, the same
+      address on the brand registration, and how to reach a person.
+    -->
+    <div class="biz-card">
+      <div class="biz-name">Light Alchemy Labs</div>
+      <div class="biz-line">A DBA of <strong>Light Alchemy Ventures LLC</strong></div>
+      <div class="biz-line">1500 North Grant Street, STE N &middot; Denver, Colorado 80203 &middot; United States</div>
+      <div class="biz-line"><a href="mailto:dave@lightalchemyventures.com">dave@lightalchemyventures.com</a></div>
+      <div class="biz-line biz-what">
+        We build and operate <strong>Ren</strong>, a personal wellbeing application for journaling,
+        guided meditation, habit tracking and daily companionship, available at
+        <a href="https://www.renishere.com">renishere.com</a>.
+      </div>
+    </div>
   </section>
 
 </div>
+
+<style>
+  .biz-card {
+    max-width: 34rem; margin: 3rem auto 0; padding: 1.75rem 1.5rem;
+    border: 1px solid rgba(74,173,171,0.20); border-radius: 1rem;
+    background: rgba(42,125,123,0.05); text-align: left;
+  }
+  .biz-name {
+    font-size: .9375rem; font-weight: 500; color: var(--text-main); margin-bottom: .5rem;
+  }
+  .biz-line {
+    font-size: .8125rem; line-height: 1.75; color: var(--text-muted);
+  }
+  .biz-line a { color: var(--teal-light); text-decoration: none; }
+  .biz-line a:hover { text-decoration: underline; }
+  .biz-what { margin-top: .875rem; color: var(--text-main); }
+  .footer-policy {
+    margin-top: 1.25rem; display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;
+  }
+  .footer-policy a {
+    font-size: .75rem; letter-spacing: .06em; color: var(--text-muted); text-decoration: none;
+  }
+  .footer-policy a:hover { color: var(--teal-light); }
+  @media (max-width: 640px) { .biz-card { margin-top: 2.25rem; padding: 1.375rem 1.125rem; } }
+</style>
 
 <!-- ── FOOTER ────────────────────────────────────────────────── -->
 <footer>
@@ -853,6 +902,18 @@ footer {
         Light Alchemy Labs &nbsp;·&nbsp; Dave Bobrowski, Founder
       </div>
       <div class="footer-tagline">Present. Purposeful. Luminous.</div>
+      <!--
+        THE BRAND AND ITS EVIDENCE, ONE CLICK APART.
+
+        Four campaign rejections have had one shape in common: the submission pointed reviewers at a
+        place the evidence was not. These three pages carry the messaging program, the consent
+        language and the privacy terms, and until now nothing here even mentioned they existed.
+      -->
+      <div class="footer-policy">
+        <a href="https://www.renishere.com/sms">Text message program</a>
+        <a href="https://www.renishere.com/privacy">Privacy</a>
+        <a href="https://www.renishere.com/terms">Terms</a>
+      </div>
     </div>
   </div>
 </footer>

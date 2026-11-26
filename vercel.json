@@ -1,6 +1,19 @@
 {
   "redirects": [
-    { "source": "/ren", "destination": "https://www.renishere.com/", "permanent": true },
-    { "source": "/ren/:path*", "destination": "https://www.renishere.com/:path*", "permanent": true }
+    {
+      "source": "/ren",
+      "destination": "https://www.renishere.com/",
+      "permanent": true
+    },
+    {
+      "source": "/ren/",
+      "destination": "https://www.renishere.com/",
+      "permanent": true
+    },
+    {
+      "source": "/ren/:path*",
+      "destination": "https://www.renishere.com/:path*",
+      "permanent": true
+    }
   ]
 }
